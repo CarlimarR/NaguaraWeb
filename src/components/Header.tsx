@@ -9,13 +9,10 @@ const Header: React.FC = () => {
           <img 
             src={logo} 
             alt="NaguaraStudio - Agencia Creativa" 
-            className="w-32 h-32 md:w-40 md:h-40 object-contain animate-float"
+            className="w-20 h-20 md:w-150 md:h-30 object-contain animate-float"
           />
         </div>
-        <h1 className="text-4xl md:text-5xl font-bold text-gray-800 mb-2">
-          NaguaraStudio
-        </h1>
-        <p className="text-xl text-purple-600 font-medium mb-2">Agencia Creativa</p>
+        <p className="text-xl text-blue-900 font-medium mb-2">Agencia Creativa</p>
         <p className="text-gray-600">Personalización • Diseño • Papelería Creativa</p>
       </div>
     </header>

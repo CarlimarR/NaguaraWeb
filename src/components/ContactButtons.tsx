@@ -16,16 +16,16 @@ const ContactButtons: React.FC = () => {
       platform: 'WhatsApp', 
       url: '/whatsapp',
       icon: <FaWhatsapp className="text-2xl" />,
-      color: 'bg-whatsapp',
-      hoverColor: 'hover:bg-whatsapp-dark',
+      color: 'bg-green-600',
+      hoverColor: 'hover:bg-yellow-600',
       description: 'Chat directo'
     },
     { 
       platform: 'Instagram', 
       url: 'https://www.instagram.com/naguarastudio_ve?igsh=aTdnZmFzenl2ZWM3', 
       icon: <FaInstagram className="text-2xl" />,
-      color: 'bg-instagram',
-      hoverColor: 'hover:bg-pink-600',
+      color: 'bg-pink-600',
+      hoverColor: 'hover:bg-yellow-600',
       description: 'Nuestro portafolio'
     },
     { 
@@ -33,7 +33,7 @@ const ContactButtons: React.FC = () => {
       url: 'mailto:naguarastudio.ve@gmail.com',
       icon: <FaEnvelope className="text-2xl" />,
       color: 'bg-blue-600',
-      hoverColor: 'hover:bg-blue-700',
+      hoverColor: 'hover:bg-yellow-600',
       description: 'Escríbenos'
     },
     { 
@@ -41,15 +41,15 @@ const ContactButtons: React.FC = () => {
       url: 'https://vm.tiktok.com/ZS918GCx94Akh-FzyOD/', 
       icon: <FaTiktok className="text-2xl" />,
       color: 'bg-black',
-      hoverColor: 'hover:bg-gray-800',
+      hoverColor: 'hover:bg-yellow-600',
       description: 'Contenido creativo'
     },
     { 
       platform: 'Facebook', 
       url: 'https://www.facebook.com/profile.php?id=61584986701490', 
       icon: <FaFacebookF className="text-2xl" />,
-      color: 'bg-facebook',
-      hoverColor: 'hover:bg-blue-800',
+      color: 'bg-blue-600',
+      hoverColor: 'hover:bg-yellow-600',
       description: 'Comunidad'
     },
   ];
@@ -107,7 +107,7 @@ const ContactButtons: React.FC = () => {
 
         <div className="grid md:grid-cols-3 gap-6 max-w-3xl mx-auto">
           <div className="flex items-center gap-3 p-4 bg-white rounded-lg shadow-md">
-            <FaEnvelope className="text-purple-500 text-xl" />
+            <FaEnvelope className="text-blue-500 text-xl" />
             <div>
               <strong className="block text-gray-800">Correo</strong>
               <p className="text-gray-600 text-sm">{contactInfo.email}</p>
@@ -115,7 +115,7 @@ const ContactButtons: React.FC = () => {
           </div>
           
           <div className="flex items-center gap-3 p-4 bg-white rounded-lg shadow-md">
-            <FaPhoneAlt className="text-purple-500 text-xl" />
+            <FaPhoneAlt className="text-blue-500 text-xl" />
             <div>
               <strong className="block text-gray-800">Teléfono</strong>
               <p className="text-gray-600 text-sm">{contactInfo.phone}</p>
@@ -123,7 +123,7 @@ const ContactButtons: React.FC = () => {
           </div>
           
           <div className="flex items-center gap-3 p-4 bg-white rounded-lg shadow-md">
-            <FaMapMarkerAlt className="text-purple-500 text-xl" />
+            <FaMapMarkerAlt className="text-blue-500 text-xl" />
             <div>
               <strong className="block text-gray-800">Ubicación</strong>
               <p className="text-gray-600 text-sm">{contactInfo.location}</p>

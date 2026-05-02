@@ -12,18 +12,18 @@ import {
 const Hero: React.FC = () => {
   const servicios = [
     {
-      icon: <FaPalette className="text-4xl text-purple-500" />,
+      icon: <FaPalette className="text-4xl text-yellow-500" />,
       titulo: "Diseño Gráfico",
       descripcion: "Identidad visual, manejo de redes y proyectos digitales."
     },
     {
-      icon: <FaMagic className="text-4xl text-purple-500" />,
+      icon: <FaMagic className="text-4xl text-yellow-500" />,
       titulo: "Personalización",
       descripcion: "Sublimación de tazas, franelas, llaveros, rotulados y photocards."
     },
     {
-      icon: <FaBoxOpen className="text-4xl text-purple-500" />,
-      titulo: "Detalles que marcan la diferencia",
+      icon: <FaBoxOpen className="text-4xl text-yellow-500" />,
+      titulo: "Detalles",
       descripcion: "Packaging, cajas, stickers, tarjetas y toppers para regalos inolvidables."
     }
   ];
@@ -53,12 +53,18 @@ const Hero: React.FC = () => {
           
           <div className="grid md:grid-cols-3 gap-8">
             {servicios.map((servicio, index) => (
-              <div key={index} className="text-center p-6 rounded-xl bg-gradient-to-br from-purple-50 to-pink-50 card-hover">
-                <div className="flex justify-center mb-4">
-                  {servicio.icon}
+              <div key={index} className="text-center p-6 rounded-xl bg-blue-200 transition-all duration-300 hover:bg-blue-500 hover:text-white hover:scale-105 shadow-md">
+                <div className="flex justify-center mb-4 transition-colors duration-300">
+                  <div className="hover:text-white">
+                    {servicio.icon}
+                  </div>
                 </div>
-                <h4 className="text-xl font-semibold text-gray-800 mb-3">{servicio.titulo}</h4>
-                <p className="text-gray-600">{servicio.descripcion}</p>
+                <h4 className="text-xl font-semibold text-gray-800 mb-3 transition-colors duration-300 group-hover:text-white">
+                  {servicio.titulo}
+                </h4>
+                <p className="text-gray-600 transition-colors duration-300 hover:text-white">
+                  {servicio.descripcion}
+                </p>
               </div>
             ))}
           </div>
@@ -69,9 +75,9 @@ const Hero: React.FC = () => {
             </h4>
             <div className="flex flex-wrap justify-center gap-4">
               {otrosServicios.map((item, index) => (
-                <div key={index} className="flex items-center gap-2 bg-gray-100 px-4 py-2 rounded-full card-hover">
-                  <span className="text-purple-500">{item.icon}</span>
-                  <span className="text-gray-700">{item.texto}</span>
+                <div key={index} className="flex items-center gap-2 bg-gray-100 px-4 py-2 rounded-full card-hover transition-all duration-300 hover:bg-blue-500 hover:text-white">
+                  <span className="text-blue-500 transition-colors duration-300 hover:text-white">{item.icon}</span>
+                  <span className="text-gray-700 transition-colors duration-300 hover:text-white">{item.texto}</span>
                 </div>
               ))}
             </div>
