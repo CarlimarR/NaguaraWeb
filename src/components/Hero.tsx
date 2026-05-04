@@ -1,90 +1,21 @@
 import React from 'react';
-import { 
-  FaPalette, 
-  FaMagic, 
-  FaBoxOpen, 
-  FaPaintBrush,
-  FaTshirt,
-  FaGift,
-  FaTags
-} from 'react-icons/fa';
+import logo from '../assets/logos/logo-naguara.png';
 
 const Hero: React.FC = () => {
-  const servicios = [
-    {
-      icon: <FaPalette className="text-4xl text-yellow-500" />,
-      titulo: "Diseño Gráfico",
-      descripcion: "Identidad visual, manejo de redes y proyectos digitales."
-    },
-    {
-      icon: <FaMagic className="text-4xl text-yellow-500" />,
-      titulo: "Personalización",
-      descripcion: "Sublimación de tazas, franelas, llaveros, rotulados y photocards."
-    },
-    {
-      icon: <FaBoxOpen className="text-4xl text-yellow-500" />,
-      titulo: "Detalles",
-      descripcion: "Packaging, cajas, stickers, tarjetas y toppers para regalos inolvidables."
-    }
-  ];
-
-  const otrosServicios = [
-    { icon: <FaPaintBrush />, texto: "Diseño de logotipos" },
-    { icon: <FaTshirt />, texto: "Ropa personalizada" },
-    { icon: <FaGift />, texto: "Regalos corporativos" },
-    { icon: <FaTags />, texto: "Etiquetas y stickers" }
-  ];
-
   return (
-    <section className="py-16 px-4 bg-white">
-      <div className="container mx-auto max-w-6xl">
-        <h2 className="text-3xl md:text-4xl font-bold text-center text-gray-800 mb-4">
-          ¿Listo para crear algo increíble?
-        </h2>
-        <p className="text-center text-gray-600 text-lg max-w-2xl mx-auto mb-12">
-          Ya sea que estés buscando potenciar tu marca o crear un regalo con significado, 
-          aquí en NaguaraStudio estamos para caminar contigo.
-        </p>
-        
-        <div className="mb-16">
-          <h3 className="text-2xl font-semibold text-center text-gray-800 mb-8">
-            ¿Qué hacemos?
-          </h3>
-          
-          <div className="grid md:grid-cols-3 gap-8">
-            {servicios.map((servicio, index) => (
-              <div key={index} className="text-center p-6 rounded-xl bg-blue-200 transition-all duration-300 hover:bg-blue-500 hover:text-white hover:scale-105 shadow-md">
-                <div className="flex justify-center mb-4 transition-colors duration-300">
-                  <div className="hover:text-white">
-                    {servicio.icon}
-                  </div>
-                </div>
-                <h4 className="text-xl font-semibold text-gray-800 mb-3 transition-colors duration-300 group-hover:text-white">
-                  {servicio.titulo}
-                </h4>
-                <p className="text-gray-600 transition-colors duration-300 hover:text-white">
-                  {servicio.descripcion}
-                </p>
-              </div>
-            ))}
-          </div>
-          
-          <div className="mt-12">
-            <h4 className="text-xl font-semibold text-center text-gray-800 mb-6">
-              También ofrecemos:
-            </h4>
-            <div className="flex flex-wrap justify-center gap-4">
-              {otrosServicios.map((item, index) => (
-                <div key={index} className="flex items-center gap-2 bg-gray-100 px-4 py-2 rounded-full card-hover transition-all duration-300 hover:bg-blue-500 hover:text-white">
-                  <span className="text-blue-500 transition-colors duration-300 hover:text-white">{item.icon}</span>
-                  <span className="text-gray-700 transition-colors duration-300 hover:text-white">{item.texto}</span>
-                </div>
-              ))}
-            </div>
-          </div>
+    <header className="text-center py-16 px-4 bg-gradient-to-br from-purple-50 to-pink-50">
+      <div className="container mx-auto">
+        <div className="flex justify-center mb-6">
+          <img 
+            src={logo} 
+            alt="NaguaraStudio - Agencia Creativa" 
+            className="w-20 h-20 md:w-150 md:h-30 object-contain animate-float"
+          />
         </div>
+        <p className="text-xl text-blue-900 font-medium mb-2">Agencia Creativa</p>
+        <p className="text-gray-600">Personalización • Diseño • Papelería Creativa</p>
       </div>
-    </section>
+    </header>
   );
 };
 
