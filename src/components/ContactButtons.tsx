@@ -1,137 +1,153 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import { 
-  FaWhatsapp, 
-  FaInstagram, 
-  FaEnvelope, 
-  FaTiktok, 
-  FaFacebookF,
-  FaPhoneAlt,
-  FaMapMarkerAlt
-} from 'react-icons/fa';
+import React, { useState } from 'react';
+import { FaWhatsapp, FaInstagram, FaEnvelope, FaTiktok, FaFacebookF } from 'react-icons/fa';
+import { motion, AnimatePresence } from 'framer-motion';
 
 const ContactButtons: React.FC = () => {
-  const contacts = [
-    { 
-      platform: 'WhatsApp', 
-      url: '/whatsapp',
-      icon: <FaWhatsapp className="text-2xl" />,
-      color: 'bg-green-600',
-      hoverColor: 'hover:bg-yellow-600',
-      description: 'Chat directo'
-    },
-    { 
-      platform: 'Instagram', 
-      url: 'https://www.instagram.com/naguarastudio_ve?igsh=aTdnZmFzenl2ZWM3', 
-      icon: <FaInstagram className="text-2xl" />,
-      color: 'bg-pink-600',
-      hoverColor: 'hover:bg-yellow-600',
-      description: 'Nuestro portafolio'
-    },
-    { 
-      platform: 'Correo', 
-      url: 'mailto:naguarastudio.ve@gmail.com',
-      icon: <FaEnvelope className="text-2xl" />,
-      color: 'bg-blue-600',
-      hoverColor: 'hover:bg-yellow-600',
-      description: 'Escríbenos'
-    },
-    { 
-      platform: 'TikTok', 
-      url: 'https://vm.tiktok.com/ZS918GCx94Akh-FzyOD/', 
-      icon: <FaTiktok className="text-2xl" />,
-      color: 'bg-black',
-      hoverColor: 'hover:bg-yellow-600',
-      description: 'Contenido creativo'
-    },
-    { 
-      platform: 'Facebook', 
-      url: 'https://www.facebook.com/profile.php?id=61584986701490', 
-      icon: <FaFacebookF className="text-2xl" />,
-      color: 'bg-blue-600',
-      hoverColor: 'hover:bg-yellow-600',
-      description: 'Comunidad'
-    },
+  const [showWhatsappOptions, setShowWhatsappOptions] = useState(false);
+  const [selectedNumber, setSelectedNumber] = useState<string | null>(null);
+
+  const whatsappNumbers = [
+    { number: '+584248193112', label: 'Carlos', emoji: '👨‍💼' },
+    { number: '+584269621201', label: 'María', emoji: '👩‍💼' }
   ];
 
-  const contactInfo = {
-    email: 'naguarastudio.ve@gmail.com',
-    phone: '+58 424 819 3112 / +58 426 962 1201',
-    location: 'Anzoátegui, Venezuela'
+  const socialLinks = [
+    { 
+      icon: <FaWhatsapp className="text-3xl" />, 
+      name: 'WhatsApp',
+      isWhatsapp: true,
+      action: () => setShowWhatsappOptions(!showWhatsappOptions),
+      color: '#25D366'
+    },
+    { 
+      icon: <FaInstagram className="text-3xl" />, 
+      name: 'Instagram',
+      url: 'https://www.instagram.com/naguarastudio_ve',
+      color: '#E4405F'
+    },
+    { 
+      icon: <FaFacebookF className="text-3xl" />, 
+      name: 'Facebook',
+      url: 'https://www.facebook.com/profile.php?id=61584986701490',
+      color: '#1877F2'
+    },
+    { 
+      icon: <FaTiktok className="text-3xl" />, 
+      name: 'TikTok',
+      url: 'https://vm.tiktok.com/ZS918GCx94',
+      color: '#000000'
+    },
+    { 
+      icon: <FaEnvelope className="text-3xl" />, 
+      name: 'Email',
+      url: 'mailto:naguarastudio.ve@gmail.com',
+      color: '#EA4335'
+    }
+  ];
+
+  const handleSocialClick = (social: typeof socialLinks[0]) => {
+    if (social.isWhatsapp) {
+      social.action();
+    } else if (social.url) {
+      window.open(social.url, '_blank');
+    }
+  };
+
+  const handleSelectWhatsapp = (number: string) => {
+    setSelectedNumber(number);
+    setTimeout(() => {
+      window.open(`https://wa.me/${number.replace(/\D/g, '')}`, '_blank');
+      setShowWhatsappOptions(false);
+      setSelectedNumber(null);
+    }, 200);
   };
 
   return (
-    <div className="py-16 px-4 bg-gradient-to-br from-gray-50 to-gray-100">
-      <div className="container mx-auto max-w-6xl">
+    <section className="py-20 bg-gradient-to-b from-[#FEFEFE] to-[#F6F0E0]">
+      <div className="container mx-auto px-4">
         <div className="text-center mb-12">
-          <h3 className="text-3xl font-bold text-gray-800 mb-3">
-            ¿Listo para crear algo increíble?
-          </h3>
-          <p className="text-gray-600 text-lg">
-            Contáctanos a través de tu red favorita
-          </p>
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-3">
+            Conecta con nosotros
+          </h2>
+          <p className="text-gray-600 text-lg">Elige tu plataforma favorita</p>
         </div>
-        
-        <div className="grid grid-cols-2 md:grid-cols-5 gap-4 mb-16">
-          {contacts.map((contact) => {
-            const ButtonContent = (
-              <div className={`${contact.color} ${contact.hoverColor} text-white rounded-xl p-4 text-center transition-all duration-300 hover-scale`}>
-                <div className="flex justify-center mb-2">
-                  {contact.icon}
-                </div>
-                <div className="font-semibold text-sm md:text-base">{contact.platform}</div>
-                <div className="text-xs opacity-90 mt-1 hidden md:block">{contact.description}</div>
-              </div>
-            );
 
-            if (contact.platform === 'WhatsApp') {
-              return (
-                <Link key={contact.platform} to={contact.url}>
-                  {ButtonContent}
-                </Link>
-              );
-            }
-            
-            return (
-              <a
-                key={contact.platform}
-                href={contact.url}
-                target={contact.platform === 'Correo' ? '_self' : '_blank'}
-                rel="noopener noreferrer"
+        {/* Contact Circles */}
+        <div className="flex flex-wrap justify-center gap-8 md:gap-12 mb-12 relative">
+          {socialLinks.map((social, index) => (
+            <div key={index} className="relative">
+              <motion.button
+                whileHover={{ scale: 1.1, y: -5 }}
+                whileTap={{ scale: 0.95 }}
+                onClick={() => handleSocialClick(social)}
+                className="w-20 h-20 md:w-24 md:h-24 rounded-full bg-white shadow-xl flex items-center justify-center transition-all duration-300 hover:shadow-2xl border-4 border-transparent hover:border-[#F7B150] group"
+                style={{ boxShadow: `0 10px 25px -5px ${social.color}40` }}
               >
-                {ButtonContent}
-              </a>
-            );
-          })}
+                <div className="text-gray-700 group-hover:text-[#F7B150] transition-colors duration-300">
+                  {social.icon}
+                </div>
+              </motion.button>
+              <p className="text-center mt-2 text-sm font-medium text-gray-600">{social.name}</p>
+            </div>
+          ))}
         </div>
 
-        <div className="grid md:grid-cols-3 gap-6 max-w-3xl mx-auto">
-          <div className="flex items-center gap-3 p-4 bg-white rounded-lg shadow-md">
-            <FaEnvelope className="text-blue-500 text-xl" />
-            <div>
-              <strong className="block text-gray-800">Correo</strong>
-              <p className="text-gray-600 text-sm">{contactInfo.email}</p>
-            </div>
-          </div>
-          
-          <div className="flex items-center gap-3 p-4 bg-white rounded-lg shadow-md">
-            <FaPhoneAlt className="text-blue-500 text-xl" />
-            <div>
-              <strong className="block text-gray-800">Teléfono</strong>
-              <p className="text-gray-600 text-sm">{contactInfo.phone}</p>
-            </div>
-          </div>
-          
-          <div className="flex items-center gap-3 p-4 bg-white rounded-lg shadow-md">
-            <FaMapMarkerAlt className="text-blue-500 text-xl" />
-            <div>
-              <strong className="block text-gray-800">Ubicación</strong>
-              <p className="text-gray-600 text-sm">{contactInfo.location}</p>
-            </div>
-          </div>
-        </div>
+        {/* WhatsApp Options Popup */}
+        <AnimatePresence>
+          {showWhatsappOptions && (
+            <motion.div
+              initial={{ opacity: 0, y: 20, scale: 0.9 }}
+              animate={{ opacity: 1, y: 0, scale: 1 }}
+              exit={{ opacity: 0, y: 20, scale: 0.9 }}
+              className="fixed bottom-24 right-4 md:right-8 z-50"
+            >
+              <div className="bg-white rounded-2xl shadow-2xl p-4 w-72 border-t-4 border-[#25D366]">
+                <div className="flex justify-between items-center mb-3">
+                  <h3 className="font-bold text-gray-800 flex items-center gap-2">
+                    <FaWhatsapp className="text-green-500" />
+                    Elige un contacto
+                  </h3>
+                  <button
+                    onClick={() => setShowWhatsappOptions(false)}
+                    className="text-gray-400 hover:text-gray-600"
+                  >
+                    ✕
+                  </button>
+                </div>
+                <div className="space-y-2">
+                  {whatsappNumbers.map((wa, idx) => (
+                    <button
+                      key={idx}
+                      onClick={() => handleSelectWhatsapp(wa.number)}
+                      disabled={selectedNumber !== null}
+                      className="w-full text-left p-3 rounded-xl hover:bg-green-50 transition-all duration-300 flex items-center gap-3 group"
+                    >
+                      <span className="text-2xl">{wa.emoji}</span>
+                      <div>
+                        <p className="font-semibold text-gray-800">{wa.label}</p>
+                        <p className="text-sm text-gray-500">{wa.number}</p>
+                      </div>
+                      {selectedNumber === wa.number && (
+                        <motion.div
+                          initial={{ scale: 0 }}
+                          animate={{ scale: 1 }}
+                          className="ml-auto"
+                        >
+                          <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
+                        </motion.div>
+                      )}
+                    </button>
+                  ))}
+                </div>
+                <div className="mt-3 pt-3 border-t border-gray-100 text-xs text-gray-500 text-center">
+                  Responde rápido | 8:30 AM - 8:00 PM
+                </div>
+              </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
       </div>
-    </div>
+    </section>
   );
 };
 

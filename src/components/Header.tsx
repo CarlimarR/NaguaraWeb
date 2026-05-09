@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { FaHome, FaWhatsapp, FaBars, FaTimes, FaPalette } from 'react-icons/fa';
+import { FaHome, FaWhatsapp, FaBars, FaTimes } from 'react-icons/fa';
+import iconoNg from '../assets/logos/icono-ng.png';
 
 const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -19,11 +20,13 @@ const Header: React.FC = () => {
         <div className="flex justify-between items-center">
           {/* Logo y nombre */}
           <Link to="/" className="flex items-center gap-2 group">
-            <div className="w-10 h-10 bg-gradient-to-br from-yellow-500 to-blue-500 rounded-lg flex items-center justify-center transition-transform group-hover:scale-110">
-              <FaPalette className="text-white text-xl" />
-            </div>
+            <img 
+              src={iconoNg} 
+              alt="NaguaraStudio" 
+              className="w-10 h-10 object-contain transition-transform group-hover:scale-110"
+            />
             <span className="font-bold text-xl text-gray-800 hidden sm:inline">
-              Naguara<span className="text-blue-600">Studio</span>
+              Naguara<span className="text-[#0F69B2]">Studio</span>
             </span>
           </Link>
 
@@ -35,8 +38,8 @@ const Header: React.FC = () => {
                 to={link.path}
                 className={`flex items-center px-4 py-2 rounded-lg transition-all duration-300 ${
                   isActive(link.path)
-                    ? 'bg-gradient-to-r from-yellow-500 to-blue-500 text-white shadow-lg'
-                    : 'text-gray-700 hover:bg-purple-100 hover:text--600'
+                    ? 'bg-[#0F69B2] text-white shadow-lg'
+                    : 'text-gray-700 hover:bg-[#F6F0E0] hover:text-[#0F69B2]'
                 }`}
               >
                 {link.icon}
@@ -64,8 +67,8 @@ const Header: React.FC = () => {
                 onClick={() => setIsMenuOpen(false)}
                 className={`flex items-center px-4 py-3 rounded-lg mb-2 transition-all ${
                   isActive(link.path)
-                    ? 'bg-gradient-to-r from-purple-500 to-pink-500 text-white'
-                    : 'text-gray-700 hover:bg-purple-50'
+                    ? 'bg-[#0F69B2] text-white'
+                    : 'text-gray-700 hover:bg-[#F6F0E0]'
                 }`}
               >
                 {link.icon}
