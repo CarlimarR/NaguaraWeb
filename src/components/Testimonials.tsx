@@ -8,7 +8,7 @@ const Testimonials: React.FC = () => {
   };
 
   return (
-    <section className="py-20 bg-gradient-to-br from-[#F6F0E0] to-[#FEFEFE]">
+    <section className="py-20 bg-gradient-to-br from-white to-[#F6F0E0]">
       <div className="container mx-auto px-4">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -34,14 +34,14 @@ const Testimonials: React.FC = () => {
         >
           <div className="bg-white rounded-2xl p-8 shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-[1.02] border border-gray-100">
             <div className="flex flex-col items-center text-center">
-              <div className="w-20 h-20 rounded-full bg-gradient-to-br from-[#F7B150] to-[#0F69B2] flex items-center justify-center mb-4">
+              <div className="w-20 h-20 rounded-full bg-[#F7B150] flex items-center justify-center mb-4">
                 <FaInstagram className="text-white text-3xl" />
               </div>
               <h3 className="text-2xl font-bold text-gray-800 mb-2">Ver referencias reales</h3>
               <p className="text-gray-600 mb-4">
                 Mira las experiencias de nuestros clientes en Instagram
               </p>
-              <div className="inline-flex items-center gap-2 bg-gradient-to-r from-[#F7B150] to-[#0F69B2] text-white px-6 py-2 rounded-full font-semibold">
+              <div className="inline-flex items-center gap-2 bg-[#F7B150] text-white px-6 py-2 rounded-full font-semibold hover:bg-[#0F69B2] transition-all duration-300">
                 <FaInstagram />
                 Ver historias destacadas →
               </div>

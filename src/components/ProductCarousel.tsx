@@ -1,4 +1,5 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom'; // 👈 AÑADIR ESTO
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination, Autoplay, EffectCoverflow } from 'swiper/modules';
 import { motion } from 'framer-motion';
@@ -9,53 +10,73 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/effect-coverflow';
 
-// Productos de ejemplo - Reemplaza con tus productos reales
+// Importar TODAS las imágenes de la carpeta products en UNA sola línea
+const productImages = import.meta.glob('../assets/products/*.{jpg,jpeg,png,webp}', { eager: true });
+const productsList = Object.values(productImages).map((mod: any) => mod.default);
+
+// Productos con imágenes importadas automáticamente
 const products = [
   {
     id: 1,
-    name: 'Tazas Personalizadas',
+    name: 'Tazas y Termos',
     category: 'Sublimación',
-    image: 'https://images.unsplash.com/photo-1514228742587-6b1558fcca3d?w=400',
-    description: 'Tazas de cerámica con diseño único'
+    image: productsList[0],
+    description: 'Diseños en sublimación, DTF UV y Rotulados'
   },
   {
     id: 2,
-    name: 'Franelas Estampadas',
+    name: 'Textil',
     category: 'Textil',
-    image: 'https://images.unsplash.com/photo-1576566588028-4147f3842f27?w=400',
-    description: 'Poliéster deportivo o algodón'
+    image: productsList[1],
+    description: 'Sublimación, DTF y Vinil'
   },
   {
     id: 3,
     name: 'Stickers Personalizados',
     category: 'Papelería',
-    image: 'https://images.unsplash.com/photo-1572375992501-4b0892d50c69?w=400',
-    description: 'Vinil resistente al agua'
+    image: productsList[2],
+    description: 'Vinil, Fotográfico y Holográficos'
   },
   {
     id: 4,
-    name: 'llaveros Acrílicos',
-    category: 'Accesorios',
-    image: 'https://images.unsplash.com/photo-1605100804763-247f67b3557e?w=400',
-    description: 'Diseños 3D y glitter'
+    name: 'Gran Formato',
+    category: 'Impresión',
+    image: productsList[3],
+    description: 'Pendones, lonas, vinil gran formato'
   },
   {
     id: 5,
-    name: 'Packaging Regalos',
-    category: 'Packaging',
-    image: 'https://images.unsplash.com/photo-1513885535751-8b9238bd345a?w=400',
-    description: 'Cajas, bolsas y wrapping'
+    name: 'Papelería Creativa',
+    category: 'Papelería',
+    image: productsList[4],
+    description: 'Cajas, bolsas y Arreglos personalizados'
   },
   {
     id: 6,
-    name: 'Photocards',
-    category: 'Fotografía',
-    image: 'https://images.unsplash.com/photo-1586953208448-b95a79798f07?w=400',
-    description: 'Acabado mate o brillante'
+    name: 'Kits Corporativos',
+    category: 'Kits',
+    image: productsList[5],
+    description: 'Merchandising personalizado para empresas'
+  },
+  {
+    id: 7,
+    name: 'Diseño Gráfico',
+    category: 'Diseño',
+    image: productsList[6],
+    description: 'Diseñamos lo que necesites para tu negocio o evento personal'
+  },
+  {
+    id: 8,
+    name: 'Llaveros Personalizados',
+    category: 'Llaveros',
+    image: productsList[7],
+    description: 'Sublimación y Acrílico'
   }
 ];
 
 const ProductCarousel: React.FC = () => {
+  const navigate = useNavigate(); // 👈 AÑADIR ESTO
+
   const handleCotizar = () => {
     const message = encodeURIComponent('Hola! estoy interesado en realizar una cotización de productos, me gustaría saber más información.');
     window.open(`https://wa.me/584248193112?text=${message}`, '_blank');
@@ -105,7 +126,7 @@ const ProductCarousel: React.FC = () => {
           }}
           className="product-carousel"
         >
-          {products.map((product) => (
+          {products.map((product, index) => (
             <SwiperSlide key={product.id}>
               <motion.div
                 whileHover={{ y: -10 }}
@@ -113,7 +134,7 @@ const ProductCarousel: React.FC = () => {
               >
                 <div className="relative h-64 overflow-hidden">
                   <img
-                    src={product.image}
+                    src={productsList[index]}
                     alt={product.name}
                     className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
                   />
@@ -139,7 +160,10 @@ const ProductCarousel: React.FC = () => {
           </button>
           
           <div>
-            <button className="px-8 py-3 border-2 border-[#F7B150] text-[#F7B150] rounded-full font-semibold hover:bg-[#F7B150] hover:text-white transition-all duration-300">
+            <button 
+              onClick={() => navigate('/catalogo')} // 👈 MODIFICAR ESTA LÍNEA
+              className="px-8 py-3 border-2 border-[#F7B150] text-[#F7B150] rounded-full font-semibold hover:bg-[#F7B150] hover:text-white transition-all duration-300"
+            >
               Ver catálogo completo →
             </button>
           </div>

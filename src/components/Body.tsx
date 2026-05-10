@@ -1,10 +1,12 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import { FaPalette, FaMagic, FaBoxOpen, FaPaintBrush, FaTshirt, FaGift, FaTags, FaRocket } from 'react-icons/fa';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 
 const Body: React.FC = () => {
   const [ref, inView] = useInView({ triggerOnce: true, threshold: 0.1 });
+  const navigate = useNavigate();
 
   const servicios = [
     { icon: <FaPalette className="text-4xl" />, titulo: "Diseño Gráfico", descripcion: "Identidad visual, manejo de redes y proyectos digitales.", color: "#F7B150" },
@@ -104,7 +106,10 @@ const Body: React.FC = () => {
           <p className="text-gray-600 mb-4">
             ¿Tienes un proyecto en mente?
           </p>
-          <button className="px-8 py-3 bg-gradient-to-r from-[#F7B150] to-[#0F69B2] text-white rounded-full font-semibold hover:shadow-lg transform hover:scale-105 transition-all duration-300">
+          <button 
+            onClick={() => navigate('/whatsapp')}
+            className="px-8 py-3 bg-gradient-to-r from-[#F7B150] to-[#0F69B2] text-white rounded-full font-semibold hover:shadow-lg transform hover:scale-105 transition-all duration-300"
+          >
             Contáctanos ahora →
           </button>
         </motion.div>

@@ -25,12 +25,7 @@ const ContactButtons: React.FC = () => {
       url: 'https://www.instagram.com/naguarastudio_ve',
       color: '#E4405F'
     },
-    { 
-      icon: <FaFacebookF className="text-3xl" />, 
-      name: 'Facebook',
-      url: 'https://www.facebook.com/profile.php?id=61584986701490',
-      color: '#1877F2'
-    },
+
     { 
       icon: <FaTiktok className="text-3xl" />, 
       name: 'TikTok',
@@ -42,7 +37,13 @@ const ContactButtons: React.FC = () => {
       name: 'Email',
       url: 'mailto:naguarastudio.ve@gmail.com',
       color: '#EA4335'
-    }
+    },
+    { 
+      icon: <FaFacebookF className="text-3xl" />, 
+      name: 'Facebook',
+      url: 'https://www.facebook.com/profile.php?id=61584986701490',
+      color: '#1877F2'
+    },
   ];
 
   const handleSocialClick = (social: typeof socialLinks[0]) => {
