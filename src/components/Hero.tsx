@@ -16,7 +16,7 @@ const HeroOpcion9: React.FC = () => {
   }, []);
 
   const handleCotizar = () => {
-    const message = encodeURIComponent('Hola! estoy interesado en realizar una cotización de proyectos');
+    const message = encodeURIComponent('Hola! estoy interesado en realizar una cotización de...');
     window.open(`https://wa.me/584248193112?text=${message}`, '_blank');
   };
 

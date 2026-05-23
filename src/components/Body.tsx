@@ -19,7 +19,7 @@ const Body: React.FC = () => {
     { icon: <FaTshirt />, texto: "Ropa personalizada" },
     { icon: <FaGift />, texto: "Regalos corporativos" },
     { icon: <FaTags />, texto: "Etiquetas y stickers" },
-    { icon: <FaRocket />, texto: "Marketing digital" }
+    { icon: <FaRocket />, texto: "Proyectos digitales" }
   ];
 
   return (
@@ -36,8 +36,8 @@ const Body: React.FC = () => {
             ¿Listo para crear algo increíble?
           </h2>
           <p className="text-gray-600 text-lg max-w-3xl mx-auto">
-            Ya sea que estés buscando potenciar tu marca o crear un regalo con significado, 
-            aquí en <span className="font-semibold text-[#0F69B2]">NaguaraStudio</span> estamos para caminar contigo.
+            Si estas buscandor potenciar tu marca o crear un detalle con significado, 
+            aquí en <span className="font-semibold text-[#0F69B2]">NaguaraStudio</span> estamos para ayudarte con tus ideas.
           </p>
         </motion.div>
         
@@ -108,7 +108,7 @@ const Body: React.FC = () => {
           </p>
           <button 
             onClick={() => navigate('/whatsapp')}
-            className="px-8 py-3 bg-gradient-to-r from-[#F7B150] to-[#0F69B2] text-white rounded-full font-semibold hover:shadow-lg transform hover:scale-105 transition-all duration-300"
+            className="px-8 py-3 bg-[#0F69B2] text-white rounded-full font-semibold hover:shadow-lg transform hover:scale-105 transition-all duration-300"
           >
             Contáctanos ahora →
           </button>

@@ -1,24 +1,141 @@
 import React from 'react';
-import CategoriaTemplate from './CategoriaTemplate';
+import CategoriaTemplate from './CategoriaTemplate'; // ← CORRECTO: CategoriaTemplate, no CategoryaTemplate
 
-const Stickers: React.FC = () => {
+// Importar TODAS las imágenes de la carpeta papeleria en UNA sola línea
+const papeleriaImages = import.meta.glob('../../assets/catalogo/papeleria/*.{jpg,jpeg,png,webp}', { eager: true });
+const papeleriaList = Object.values(papeleriaImages).map((mod: any) => mod.default);
+
+const Papeleria: React.FC = () => {
   const products = [
-    { id: 1, name: 'Fotográfico', description: 'Stickers con acabado fotográfico, colores vibrantes.', price: '$3 (pack x10)' },
-    { id: 2, name: 'Fotográfico Laminado Holográfico', description: 'Stickers con efecto holográfico sobre impresión fotográfica.', price: '$5 (pack x10)' },
-    { id: 3, name: 'Holográfico', description: 'Stickers totalmente holográficos, cambian de color.', price: '$4 (pack x10)' },
-    { id: 4, name: 'Vinil', description: 'Stickers de vinil resistentes al agua y al sol.', price: '$3 (pack x10)' },
-    { id: 5, name: 'Rotulados', description: 'Stickers con rotulado personalizado para negocios.', price: '$2 (c/u)' },
-    { id: 6, name: 'Tarjetas de Banco', description: 'Vinilos personalizados para tarjetas bancarias.', price: '$4' },
-    { id: 7, name: 'Clear', description: 'Stickers transparentes, ideales para vidrio.', price: '$4 (pack x10)' },
+    { 
+      id: 1, 
+      name: 'Mini Poster', 
+      description: 'Medidas de 10x15cm. Perfecto para decorar espacios reducidos o como recuerdo.', 
+      price: '$2',
+      image: papeleriaList[0]
+    },
+    { 
+      id: 2, 
+      name: 'Poster', 
+      description: 'Medidas de 30x45cm. Ideal para enmarcar y decorar paredes.', 
+      price: '$6',
+      image: papeleriaList[1]
+    },
+    { 
+      id: 3, 
+      name: 'Polaroid', 
+      description: 'Medidas de 8x10cm. Acabado mate o brillante, estilo fotográfico.', 
+      price: '$3.50 (x5 und)',
+      image: papeleriaList[2]
+    },
+    { 
+      id: 4, 
+      name: 'Photocard', 
+      description: 'Medidas de 8.5x5.5cm. Tarjetas coleccionables con acabado profesional.', 
+      price: '$3.50 (x6 und)',
+      image: papeleriaList[3]
+    },
+    { 
+      id: 5, 
+      name: 'Tarjetas de presentación', 
+      description: 'Medidas 8x5cm. Perfectas para negocios y emprendedores.', 
+      price: '$4 (x30 und)',
+      image: papeleriaList[4]
+    },
+    { 
+      id: 6, 
+      name: 'Habladores', 
+      description: 'Medida de 12x20cm. Ideales para promociones y ofertas.', 
+      price: '$4.50',
+      image: papeleriaList[5]
+    },
+    { 
+      id: 7, 
+      name: 'Habladores Creativos', 
+      description: 'Hablador con figura sobresaliente. Diseño único y llamativo.', 
+      price: '$6',
+      image: papeleriaList[6]
+    },
+    { 
+      id: 8, 
+      name: 'Chapas', 
+      description: 'Medidas de 5.5cm. Chapas metálicas personalizadas con pin.', 
+      price: '$3',
+      image: papeleriaList[7]
+    },
+    { 
+      id: 9, 
+      name: 'Blocks', 
+      description: 'Blocks de diferentes tamaños para notas y apuntes. Ideal para oficina o escuela.', 
+      image: papeleriaList[8],
+      subProducts: [
+        { name: 'Mini Block', description: 'Block tamaño mini para notas rápidas.', price: '$2' },
+        { name: 'Block cuarto de carta', description: 'Block tamaño cuarto de carta.', price: '$3.50' },
+        { name: 'Block media carta', description: 'Block tamaño media carta. Versátil y práctico.', price: '$6' },
+        { name: 'Block grapado', description: 'Block grapado de hojas blancas.', price: '$5' }
+      ]
+    },
+    { 
+      id: 10, 
+      name: 'Libretas', 
+      description: 'Libretas con tapa dura en diferentes tamaños. Acabado profesional.', 
+      image: papeleriaList[9],
+      subProducts: [
+        { name: 'Libretas Tapa dura cuarto de carta', description: 'Libreta tamaño cuarto de carta con tapa dura.', price: '$8' },
+        { name: 'Libretas tapa dura media carta', description: 'Libreta tamaño media carta con tapa dura.', price: '$17.50' },
+        { name: 'Libretas tapa dura carta', description: 'Libreta tamaño carta con tapa dura y espiral.', price: '$25' }
+      ]
+    },
+    { 
+      id: 11, 
+      name: 'Cajas', 
+      description: 'Cajas para tazas de 11oz. Perfectas para regalos y empaques.', 
+      price: '$2',
+      image: papeleriaList[10]
+    },
+    { 
+      id: 12, 
+      name: 'Carpetas', 
+      description: 'Carpetas de cartulina o plástico con diseño personalizado.', 
+      price: '$7',
+      image: papeleriaList[11]
+    },
+    { 
+      id: 13, 
+      name: 'Toppers', 
+      description: 'Toppers para decoración de cupcakes y postres.', 
+      image: papeleriaList[12],
+      subProducts: [
+        { name: 'Mini toppers', description: 'Toppers pequeños para decoración de cupcakes.', price: '$4' },
+        { name: 'Toppers con relieve', description: 'Toppers con relieve para cupcakes o decoración de mesas.', price: '$8' }
+      ]
+    },
+    { 
+      id: 14, 
+      name: 'Lapiceros', 
+      description: 'Lapiceros personalizados para regalos corporativos.', 
+      image: papeleriaList[13],
+      subProducts: [
+        { name: 'Lapicero personalizado', description: 'Personalización con sublimación o DTF UV.', price: '$4' },
+        { name: 'Lapicero de flor eterna', description: 'Colores a elección, lapiceros recargables con flor preservada.', price: '$3' }
+      ]
+    },
+    { 
+      id: 15, 
+      name: 'Figuras tamaño real', 
+      description: 'Figura de preferencia sobre cartón. Perfectas para eventos y fotos.', 
+      price: '$45',
+      image: papeleriaList[14]
+    },
   ];
 
   return (
     <CategoriaTemplate
-      title="Stickers"
-      description="Stickers personalizados en diferentes acabados y materiales para todos los gustos."
+      title="Papelería Creativa"
+      description="Todo lo que necesitas para darle un toque especial a tus proyectos y eventos. Desde libretas hasta figuras tamaño real."
       products={products}
     />
   );
 };
 
-export default Stickers;
+export default Papeleria;

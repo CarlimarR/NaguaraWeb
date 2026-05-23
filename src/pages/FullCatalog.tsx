@@ -3,7 +3,6 @@ import { Link, useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { FaArrowLeft, FaWhatsapp, FaMugHot, FaTshirt, FaStickyNote, FaTags, FaPrint, FaPalette, FaKey, FaBriefcase, FaLightbulb } from 'react-icons/fa';
 
-// Importar imágenes para cada categoría (usando imágenes de productos como fondo)
 const productImages = import.meta.glob('../assets/products/*.{jpg,jpeg,png,webp}', { eager: true });
 const productsList = Object.values(productImages).map((mod: any) => mod.default);
 
@@ -11,15 +10,15 @@ const FullCatalog: React.FC = () => {
   const navigate = useNavigate();
 
   const categories = [
-    { id: 1, name: 'Termos y Tazas', icon: <FaMugHot className="text-4xl" />, path: '/catalogo/termos-tazas', image: productsList[0] },
-    { id: 2, name: 'Textil', icon: <FaTshirt className="text-4xl" />, path: '/catalogo/textil', image: productsList[1] },
-    { id: 3, name: 'Papelería', icon: <FaStickyNote className="text-4xl" />, path: '/catalogo/papeleria', image: productsList[4] },
-    { id: 4, name: 'Stickers', icon: <FaTags className="text-4xl" />, path: '/catalogo/stickers', image: productsList[2] },
-    { id: 5, name: 'Gran Formato', icon: <FaPrint className="text-4xl" />, path: '/catalogo/gran-formato', image: productsList[3] },
-    { id: 6, name: 'Diseño Gráfico', icon: <FaPalette className="text-4xl" />, path: '/catalogo/diseno', image: productsList[6] },
-    { id: 7, name: 'Llaveros', icon: <FaKey className="text-4xl" />, path: '/catalogo/llaveros', image: productsList[7] },
-    { id: 8, name: 'Kits Corporativos', icon: <FaBriefcase className="text-4xl" />, path: '/catalogo/kits', image: productsList[5] },
-    { id: 9, name: 'Especiales', icon: <FaLightbulb className="text-4xl" />, path: '/catalogo/otros', image: productsList[0] },
+    { id: 1, name: 'Termos y Tazas', icon: <FaMugHot className="text-4xl" />, path: '/catalogo/termos-tazas', image: productsList[0] }, // 01-Tazas y Termos.png
+    { id: 2, name: 'Textil', icon: <FaTshirt className="text-4xl" />, path: '/catalogo/textil', image: productsList[1] }, // 02-Franelas y Uniformes.png
+    { id: 3, name: 'Papelería', icon: <FaStickyNote className="text-4xl" />, path: '/catalogo/papeleria', image: productsList[2] }, // 03-papeleria.png
+    { id: 4, name: 'Gran Formato', icon: <FaPrint className="text-4xl" />, path: '/catalogo/gran-formato', image: productsList[3] }, // 04-Impresión Gran Formato.png
+    { id: 5, name: 'Stickers', icon: <FaTags className="text-4xl" />, path: '/catalogo/stickers', image: productsList[4] }, // 05-Stickers-Personalizados.jpg
+    { id: 6, name: 'Llaveros', icon: <FaKey className="text-4xl" />, path: '/catalogo/llaveros', image: productsList[5] }, // 06-Llaveros Personalizados.png
+    { id: 7, name: 'Especiales', icon: <FaLightbulb className="text-4xl" />, path: '/catalogo/otros', image: productsList[6] }, // 07-Especiales.jpg
+    { id: 8, name: 'Kits Corporativos', icon: <FaBriefcase className="text-4xl" />, path: '/catalogo/kits', image: productsList[7] }, // 08-kit.png
+    { id: 9, name: 'Diseño Gráfico', icon: <FaPalette className="text-4xl" />, path: '/catalogo/diseno', image: productsList[8] }, // 09-Diseño Gráfico.png
   ];
 
   const handleCotizarGeneral = () => {
@@ -57,11 +56,11 @@ const FullCatalog: React.FC = () => {
             Nuestros Productos
           </h1>
           <p className="text-gray-600 text-lg max-w-2xl mx-auto">
-            Explora todas nuestras categorías y descubre productos personalizados de alta calidad
+            Explora todas nuestras categorías y descubre productos personalizados de alta calidad.
           </p>
         </motion.div>
 
-        {/* Grid de categorías - Imágenes cuadradas */}
+        {/* Grid de categorías */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
           {categories.map((category, index) => (
             <motion.div

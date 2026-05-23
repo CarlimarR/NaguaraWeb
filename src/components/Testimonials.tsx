@@ -37,7 +37,7 @@ const Testimonials: React.FC = () => {
               <div className="w-20 h-20 rounded-full bg-[#F7B150] flex items-center justify-center mb-4">
                 <FaInstagram className="text-white text-3xl" />
               </div>
-              <h3 className="text-2xl font-bold text-gray-800 mb-2">Ver referencias reales</h3>
+              <h3 className="text-2xl font-bold text-gray-800 mb-2">Ver referencias</h3>
               <p className="text-gray-600 mb-4">
                 Mira las experiencias de nuestros clientes en Instagram
               </p>

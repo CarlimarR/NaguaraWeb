@@ -1,5 +1,5 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom'; // 👈 AÑADIR ESTO
+import { useNavigate } from 'react-router-dom';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination, Autoplay, EffectCoverflow } from 'swiper/modules';
 import { motion } from 'framer-motion';
@@ -21,42 +21,42 @@ const products = [
     name: 'Tazas y Termos',
     category: 'Sublimación',
     image: productsList[0],
-    description: 'Diseños en sublimación, DTF UV y Rotulados'
+    description: 'Técnicas en sublimación, DTF UV y Rotulado en vinil'
   },
   {
     id: 2,
     name: 'Textil',
     category: 'Textil',
     image: productsList[1],
-    description: 'Sublimación, DTF y Vinil'
+    description: 'Técnicas en sublimación, DTF y vinil textil'
   },
   {
     id: 3,
     name: 'Stickers Personalizados',
     category: 'Papelería',
     image: productsList[2],
-    description: 'Vinil, Fotográfico y Holográficos'
+    description: 'Vinil, Fotográfico, laminados y holograficos'
   },
   {
     id: 4,
     name: 'Gran Formato',
     category: 'Impresión',
     image: productsList[3],
-    description: 'Pendones, lonas, vinil gran formato'
+    description: 'Pendones, lonas, acrilicos, vinil y PVC'
   },
   {
     id: 5,
     name: 'Papelería Creativa',
     category: 'Papelería',
     image: productsList[4],
-    description: 'Cajas, bolsas y Arreglos personalizados'
+    description: 'Cajas, tarjetas y arreglos personalizaos'
   },
   {
     id: 6,
     name: 'Kits Corporativos',
     category: 'Kits',
     image: productsList[5],
-    description: 'Merchandising personalizado para empresas'
+    description: 'combos de merchandansing personalizados'
   },
   {
     id: 7,
@@ -75,7 +75,7 @@ const products = [
 ];
 
 const ProductCarousel: React.FC = () => {
-  const navigate = useNavigate(); // 👈 AÑADIR ESTO
+  const navigate = useNavigate();
 
   const handleCotizar = () => {
     const message = encodeURIComponent('Hola! estoy interesado en realizar una cotización de productos, me gustaría saber más información.');

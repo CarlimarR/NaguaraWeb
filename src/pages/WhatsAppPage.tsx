@@ -8,21 +8,21 @@ const WhatsAppPage: React.FC = () => {
     { 
       number: '+584248193112',
       label: 'Número Principal',
-      description: 'Atención general y consultas',
+      description: 'Atención general, consultas y respuestas rápidas',
       emoji: '👩‍💼',
-      color: 'from-green-500 to-green-600'
+      buttonColor: 'bg-[#F7B150] hover:bg-[#0F69B2]'
     },
     { 
       number: '+584269621201',
       label: 'Número Secundario',
       description: 'Atención general y consultas',
       emoji: '👩‍💻',
-      color: 'from-blue-500 to-green-600'
+      buttonColor: 'bg-[#0F69B2] hover:bg-[#F7B150]' 
     }
   ];
 
   const openWhatsApp = (phoneNumber: string) => {
-    const message = encodeURIComponent('Hola! Me comunico desde NaguaraStudio, necesito información sobre sus servicios.');
+    const message = encodeURIComponent('¡Hola! Me comunico desde la pagina web, necesito una cotización sobre...');
     window.open(`https://wa.me/${phoneNumber.replace(/\D/g, '')}?text=${message}`, '_blank');
   };
 
@@ -44,7 +44,7 @@ const WhatsAppPage: React.FC = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-12"
         >
-          <div className="inline-flex items-center justify-center w-24 h-24 rounded-full bg-gradient-to-br from-[#F7B150] to-[#0F69B2] shadow-lg mb-6">
+          <div className="inline-flex items-center justify-center w-24 h-24 rounded-full bg-green-500 shadow-lg mb-6">
             <FaWhatsapp className="text-5xl text-white" />
           </div>
           <h1 className="text-4xl md:text-5xl font-bold text-gray-800 mb-3">
@@ -72,12 +72,12 @@ const WhatsAppPage: React.FC = () => {
                   <div className="text-6xl">{item.emoji}</div>
                   <div className="flex-1">
                     <h3 className="text-xl font-bold text-gray-800 mb-1">{item.label}</h3>
-                    <p className={`text-lg font-semibold bg-gradient-to-r ${item.color} bg-clip-text text-transparent`}>
+                    <p className="text-lg font-semibold text-gray-800">
                       {item.number}
                     </p>
                     <p className="text-gray-500 text-sm">{item.description}</p>
                   </div>
-                  <div className="bg-gradient-to-r from-[#F7B150] to-[#0F69B2] text-white px-5 py-2.5 rounded-xl flex items-center gap-2 group-hover:shadow-lg transition-all duration-300 group-hover:scale-105">
+                  <div className={`${item.buttonColor} text-white px-5 py-2.5 rounded-xl flex items-center gap-2 group-hover:shadow-lg transition-all duration-300 group-hover:scale-105`}>
                     <FaWhatsapp />
                     <span className="font-semibold">Escribir</span>
                   </div>
@@ -167,7 +167,7 @@ const WhatsAppPage: React.FC = () => {
           className="text-center mt-12"
         >
           <p className="text-gray-500 text-sm">
-            ✨ Respondemos en menos de 1 hora en horario laboral
+            ✨ Atención completamente personalizada.
           </p>
         </motion.div>
       </div>

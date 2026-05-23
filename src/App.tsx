@@ -47,7 +47,13 @@ function App() {
               <Footer />
             </>
           } />
-          <Route path="/whatsapp" element={<WhatsAppPage />} />
+          <Route path="/whatsapp" element={
+            <>
+              <Header />
+              <WhatsAppPage />
+              <Footer />
+            </>
+          } />
           <Route path="/catalogo" element={
             <>
               <Header />
@@ -56,13 +62,13 @@ function App() {
             </>
           } />
           {/* Rutas de categorías */}
-          <Route path="/catalogo/termos-tazas" element={<><Header /><TermosTazas /><Footer /></>} />
-          <Route path="/catalogo/textil" element={<><Header /><Textil /><Footer /></>} />
           <Route path="/catalogo/papeleria" element={<><Header /><Papeleria /><Footer /></>} />
+          <Route path="/catalogo/textil" element={<><Header /><Textil /><Footer /></>} />
+          <Route path="/catalogo/termos-tazas" element={<><Header /><TermosTazas /><Footer /></>} />
+          <Route path="/catalogo/llaveros" element={<><Header /><Llaveros /><Footer /></>} />
           <Route path="/catalogo/stickers" element={<><Header /><Stickers /><Footer /></>} />
           <Route path="/catalogo/gran-formato" element={<><Header /><GranFormato /><Footer /></>} />
           <Route path="/catalogo/diseno" element={<><Header /><Diseno /><Footer /></>} />
-          <Route path="/catalogo/llaveros" element={<><Header /><Llaveros /><Footer /></>} />
           <Route path="/catalogo/kits" element={<><Header /><KitsCorporativos /><Footer /></>} />
           <Route path="/catalogo/otros" element={<><Header /><Otros /><Footer /></>} />
         </Routes>

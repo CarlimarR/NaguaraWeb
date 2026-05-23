@@ -7,8 +7,8 @@ const ContactButtons: React.FC = () => {
   const [selectedNumber, setSelectedNumber] = useState<string | null>(null);
 
   const whatsappNumbers = [
-    { number: '+584248193112', label: 'Carlos', emoji: '👨‍💼' },
-    { number: '+584269621201', label: 'María', emoji: '👩‍💼' }
+    { number: '+584248193112', label: 'Valentina', emoji: '👩‍💼' },
+    { number: '+584269621201', label: 'Rocio', emoji: '👩‍💼' }
   ];
 
   const socialLinks = [
@@ -29,7 +29,7 @@ const ContactButtons: React.FC = () => {
     { 
       icon: <FaTiktok className="text-3xl" />, 
       name: 'TikTok',
-      url: 'https://vm.tiktok.com/ZS918GCx94',
+      url: 'https://www.tiktok.com/@naguara.studio?_r=1&_t=ZS-96bopVj1zMW',
       color: '#000000'
     },
     { 
@@ -41,7 +41,7 @@ const ContactButtons: React.FC = () => {
     { 
       icon: <FaFacebookF className="text-3xl" />, 
       name: 'Facebook',
-      url: 'https://www.facebook.com/profile.php?id=61584986701490',
+      url: 'https://www.facebook.com/share/1EPx4nX7YE/',
       color: '#1877F2'
     },
   ];
@@ -57,10 +57,15 @@ const ContactButtons: React.FC = () => {
   const handleSelectWhatsapp = (number: string) => {
     setSelectedNumber(number);
     setTimeout(() => {
-      window.open(`https://wa.me/${number.replace(/\D/g, '')}`, '_blank');
+      openWhatsApp(number);
       setShowWhatsappOptions(false);
       setSelectedNumber(null);
     }, 200);
+  };
+
+  const openWhatsApp = (phoneNumber: string) => {
+    const message = encodeURIComponent('¡Hola! Me comunico desde la pagina web, necesito una cotización sobre...');
+    window.open(`https://wa.me/${phoneNumber.replace(/\D/g, '')}?text=${message}`, '_blank');
   };
 
   return (
@@ -141,7 +146,7 @@ const ContactButtons: React.FC = () => {
                   ))}
                 </div>
                 <div className="mt-3 pt-3 border-t border-gray-100 text-xs text-gray-500 text-center">
-                  Responde rápido | 8:30 AM - 8:00 PM
+                  Horario: 8:30 AM - 8:00 PM
                 </div>
               </div>
             </motion.div>
