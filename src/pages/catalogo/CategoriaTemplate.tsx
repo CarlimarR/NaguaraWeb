@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { FaArrowLeft, FaWhatsapp, FaEye, FaTimes } from 'react-icons/fa';
 
@@ -31,7 +31,6 @@ const CategoriaTemplate: React.FC<CategoriaTemplateProps> = ({
   products,
   categoryImage 
 }) => {
-  const navigate = useNavigate();
   const [selectedProduct, setSelectedProduct] = useState<Producto | null>(null);
   const [modalSubProducts, setModalSubProducts] = useState<Producto | null>(null);
 
