@@ -32,7 +32,7 @@ const Llaveros: React.FC = () => {
       id: 4, 
       name: 'Llavero con DTF UV', 
       description: 'DTF UV sobre acrílico circular 5x5cm. Colores vibrantes y alta resistencia, ideal para diseños complejos.', 
-      price: '$3.50',
+      price: '$4',
       image: llaverosList[3]
     },
     { 
@@ -80,7 +80,7 @@ const Llaveros: React.FC = () => {
     { 
       id: 11, 
       name: 'Llavero flor eterna', 
-      description: 'Llavero personalizado con flor eterna del color de preferencia.', 
+      description: 'Llavero personalizado con flor eterna del color de tu preferencia.', 
       price: '$3',
       image: llaverosList[10]
     },

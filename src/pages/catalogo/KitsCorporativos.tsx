@@ -10,7 +10,7 @@ const KitsCorporativos: React.FC = () => {
     { 
       id: 1, 
       name: '100 Tarjetas', 
-      description: 'Medidas 8x5cm. Tarjetas de presentación impresas en papel couché.', 
+      description: 'Medidas de 8x5cm.', 
       price: '$16',
       image: kitsList[0]
     },
@@ -48,7 +48,7 @@ const KitsCorporativos: React.FC = () => {
     { 
       id: 6, 
       name: 'Kit Lanyard + Carnet + Portacarnet', 
-      description: 'Lanyard sublimado, impresión de carnet y portacarnet. Ideal para identificación en eventos.', 
+      description: 'Lanyard sublimado, impresión de carnet y portacarnet. Ideal para identificación.', 
       price: '$12',
       image: kitsList[5]
     },
@@ -63,7 +63,7 @@ const KitsCorporativos: React.FC = () => {
       id: 8, 
       name: 'Kit Emprendedor', 
       description: '50 tarjetas 8x5cm, 50 stickers 3x3cm y 50 volantes 7.5x10cm. Ideal para empezar tu negocio.', 
-      price: 'Consultar',
+      price: '$20',
       image: kitsList[7]
     },
     { 
@@ -82,9 +82,9 @@ const KitsCorporativos: React.FC = () => {
     },
     { 
       id: 11, 
-      name: 'Kit Fav', 
-      description: '4 chapas, 5 polaroids, 6 photocards, 2 mini posters, 2 llaveros y caja rotulada con nombre personalizado. Perfecto para recuerdos de eventos.', 
-      price: '$22',
+      name: 'Kit Temático', 
+      description: '4 chapas, 5 polaroids, 6 photocards, 2 mini posters, 2 llaveros y caja rotulada con nombre personalizado. Perfecto para obsequios y regalos.', 
+      price: '$25',
       image: kitsList[10]
     },
   ];

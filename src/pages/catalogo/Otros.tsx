@@ -12,9 +12,9 @@ const Otros: React.FC = () => {
       description: 'Láminas de aluminio con impresión directa. Alta durabilidad y acabado brillante.', 
       image: otrosList[0],
       subProducts: [
-        { name: 'Lámina A5', description: 'Tamaño A5. Perfecta para decoración pequeñas.', price: '$10' },
+        { name: 'Lámina A5', description: 'Tamaño A5. Perfecta para decoraciones pequeñas.', price: '$10' },
         { name: 'Lámina A4', description: 'Tamaño A4. Ideal para cuadros y decoración de pared.', price: '$16' },
-        { name: 'Lámina A3', description: 'Tamaño A3. Gran formato para impacto visual.', price: '$30' }
+        { name: 'Lámina A3', description: 'Tamaño A3. Gran formato para un mayor impacto visual.', price: '$30' }
       ]
     },
     { 
@@ -41,14 +41,14 @@ const Otros: React.FC = () => {
     { 
       id: 5, 
       name: 'Identificadores', 
-      description: 'Identificadores plateados o dorados con grabado láser. Perfectos eventos o identificacion de personal.', 
+      description: 'Identificadores plateados o dorados con grabado láser. Perfectos para eventos o identificacion de personal.', 
       price: '$8',
       image: otrosList[4]
     },
     { 
       id: 6, 
       name: 'Identificador para mascotas', 
-      description: 'Manten el control e identicado a tu amigo peludo con estilo y personalidad.', 
+      description: 'Manten el control e identificado a tu amigo peludo con estilo y personalidad.', 
       price: '$4',
       image: otrosList[5]
     },

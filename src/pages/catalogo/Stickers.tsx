@@ -16,7 +16,7 @@ const Stickers: React.FC = () => {
     { 
       id: 2, 
       name: 'Laminado Holográfico', 
-      description: 'Stickers con protección de acabado holográfico. Efecto arcoíris que cambia según la luz y ángulo.', 
+      description: 'Stickers con protección y acabado holográfico. Efecto arcoíris que cambia según la luz y ángulo.', 
       price: '$5',
       image: stickersList[1]
     },

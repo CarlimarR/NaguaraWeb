@@ -80,8 +80,8 @@ const Papeleria: React.FC = () => {
       description: 'Block grapado en diferentes tamaños. Hojas blancas, ideal para notas rápidas.', 
       image: papeleriaList[9],
       subProducts: [
-        { name: 'Block grapado cuarto de carta', description: 'Block grapado tamaño cuarto de carta. Hojas blancas.', price: '$3' },
-        { name: 'Block grapado media carta', description: 'Block grapado tamaño media carta. Hojas blancas.', price: '$6' }
+        { name: 'Cuarto de carta', description: 'Block grapado tamaño cuarto de carta. Hojas blancas.', price: '$3' },
+        { name: 'Media carta', description: 'Block grapado tamaño media carta. Hojas blancas.', price: '$6' }
       ]
     },
     { 
@@ -90,9 +90,9 @@ const Papeleria: React.FC = () => {
       description: 'Libretas con tapa dura en diferentes tamaños. Acabado profesional.', 
       image: papeleriaList[10],
       subProducts: [
-        { name: 'Libretas Tapa dura cuarto de carta', description: 'Libreta tamaño cuarto de carta con tapa dura.', price: '$8' },
-        { name: 'Libretas tapa dura media carta', description: 'Libreta tamaño media carta con tapa dura.', price: '$17.50' },
-        { name: 'Libretas tapa dura carta', description: 'Libreta tamaño carta con tapa dura y espiral.', price: '$25' }
+        { name: 'Cuarto de carta', description: 'Libreta tamaño cuarto de carta con tapa dura.', price: '$8' },
+        { name: 'Media carta', description: 'Libreta tamaño media carta con tapa dura.', price: '$17.50' },
+        { name: 'Carta', description: 'Libreta tamaño carta con tapa dura.', price: '$25' }
       ]
     },
     { 
@@ -105,14 +105,15 @@ const Papeleria: React.FC = () => {
     { 
       id: 13, 
       name: 'Carpetas', 
-      description: 'Carpetas con diseño personalizado.', 
+      description: 'Carpetas con diseño personalizado y bolsillo incluido.', 
       price: '$7',
       image: papeleriaList[12]
     },
     { 
       id: 14, 
       name: 'MIni Toppers', 
-      description: 'Toppers para decoración de cupcakes y postres.', 
+      description: 'Toppers para decoración de cupcakes y postres, con medidas de 3x3cm.', 
+      price: '$4 (x15 und)',
       image: papeleriaList[13]
     },
       { 
