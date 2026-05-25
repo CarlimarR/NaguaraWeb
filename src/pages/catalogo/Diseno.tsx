@@ -40,7 +40,7 @@ const Diseno: React.FC = () => {
         >
           <h1 className="text-4xl md:text-5xl font-bold text-gray-800 mb-4">Diseño Gráfico</h1>
           <p className="text-gray-600 text-lg max-w-2xl mx-auto">
-            Soluciones creativas y profesionales para la imagen de tu negocio. Creamos piezas únicas que representan tu marca.
+            Soluciones creativas, profesionales y digitales para tus necesidades. 
           </p>
         </motion.div>
 

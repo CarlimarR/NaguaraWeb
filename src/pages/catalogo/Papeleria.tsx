@@ -1,7 +1,6 @@
 import React from 'react';
 import CategoriaTemplate from './CategoriaTemplate';
 
-// Importar TODAS las imágenes de la carpeta papeleria en UNA sola línea
 const papeleriaImages = import.meta.glob('../../assets/catalogo/papeleria/*.{jpg,jpeg,png,webp}', { eager: true });
 const papeleriaList = Object.values(papeleriaImages).map((mod: any) => mod.default);
 
@@ -20,6 +19,7 @@ const Papeleria: React.FC = () => {
       description: 'Medidas de 30x45cm. Ideal para enmarcar y decorar paredes.', 
       price: '$6',
       image: papeleriaList[1]
+      
     },
     { 
       id: 3, 
@@ -45,7 +45,7 @@ const Papeleria: React.FC = () => {
     { 
       id: 6, 
       name: 'Habladores', 
-      description: 'Medida de 12x20cm. Ideales para promociones y ofertas.', 
+      description: 'Medida de 12x20cm. Ideales para promociones, ofertas o identificadores.', 
       price: '$4.50',
       image: papeleriaList[5]
     },
@@ -59,7 +59,7 @@ const Papeleria: React.FC = () => {
     { 
       id: 8, 
       name: 'Chapas', 
-      description: 'Medidas de 5.5cm. Chapas metálicas personalizadas con pin.', 
+      description: 'Medidas de 5.5cm. Chapas metálicas personalizadas con broche.', 
       price: '$3',
       image: papeleriaList[7]
     },
@@ -105,15 +105,21 @@ const Papeleria: React.FC = () => {
     { 
       id: 13, 
       name: 'Carpetas', 
-      description: 'Carpetas de cartulina o plástico con diseño personalizado.', 
+      description: 'Carpetas con diseño personalizado.', 
       price: '$7',
       image: papeleriaList[12]
     },
     { 
       id: 14, 
+      name: 'MIni Toppers', 
+      description: 'Toppers para decoración de cupcakes y postres.', 
+      image: papeleriaList[13]
+    },
+      { 
+      id: 14, 
       name: 'Toppers', 
       description: 'Toppers para decoración de cupcakes y postres.', 
-      image: papeleriaList[13],
+      image: papeleriaList[14],
       subProducts: [
         { name: 'Topper sin relieve', description: 'Topper liso para cupcakes o decoración de mesas.', price: '$4' },
         { name: 'Topper con relieve', description: 'Topper con relieve para cupcakes o decoración de mesas. Efecto 3D llamativo.', price: '$8' }
@@ -124,21 +130,31 @@ const Papeleria: React.FC = () => {
       name: 'Lapicero personalizado', 
       description: 'Personalización con sublimación o DTF UV. Ideal para regalos corporativos.', 
       price: '$4',
-      image: papeleriaList[14]
+      image: papeleriaList[15]
     },
     { 
       id: 16, 
       name: 'Lapicero de flor eterna', 
       description: 'Colores a elección, lapiceros recargables con flor preservada.', 
       price: '$3',
-      image: papeleriaList[15]
+      image: papeleriaList[16]
     },
     { 
       id: 17, 
       name: 'Figuras tamaño real', 
       description: 'Figura de preferencia sobre cartón. Perfectas para eventos y fotos.', 
       price: '$45',
-      image: papeleriaList[16]
+      image: papeleriaList[17]
+    },
+    { 
+      id: 18, 
+      name: 'Caja de Flips', 
+      description: 'Perfecto para detalles unicos con la tematica de tu preferencia.', 
+      image: papeleriaList[18],
+      subProducts: [
+        { name: 'Caja pequeña', description: 'Medidas de 9,5x15cm con diseño incluido.', price: '$8' },
+        { name: 'Caja grande', description: 'Medidas de 15x22,5cm con diseño incluido.', price: '$10' }
+      ]
     },
   ];
 

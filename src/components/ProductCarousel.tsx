@@ -14,11 +14,11 @@ import 'swiper/css/effect-coverflow';
 const productImages = import.meta.glob('../assets/products/*.{jpg,jpeg,png,webp}', { eager: true });
 const productsList = Object.values(productImages).map((mod: any) => mod.default);
 
-// Productos con imágenes importadas automáticamente
+// Productos con imágenes importadas automáticamente - NUEVO ORDEN
 const products = [
   {
     id: 1,
-    name: 'Tazas y Termos',
+    name: 'Termos y Tazas',
     category: 'Sublimación',
     image: productsList[0],
     description: 'Técnicas en sublimación, DTF UV y Rotulado en vinil'
@@ -32,45 +32,52 @@ const products = [
   },
   {
     id: 3,
-    name: 'Stickers Personalizados',
+    name: 'Papelería',
     category: 'Papelería',
     image: productsList[2],
-    description: 'Vinil, Fotográfico, laminados y holograficos'
+    description: 'Cajas, tarjetas, libretas y arreglos personalizados'
   },
   {
     id: 4,
     name: 'Gran Formato',
     category: 'Impresión',
     image: productsList[3],
-    description: 'Pendones, lonas, acrilicos, vinil y PVC'
+    description: 'Pendones, lonas, acrílicos, vinil y PVC'
   },
   {
     id: 5,
-    name: 'Papelería Creativa',
-    category: 'Papelería',
+    name: 'Stickers',
+    category: 'Stickers',
     image: productsList[4],
-    description: 'Cajas, tarjetas y arreglos personalizaos'
+    description: 'Vinil, Fotográfico, laminados y holográficos'
   },
   {
     id: 6,
-    name: 'Kits Corporativos',
-    category: 'Kits',
+    name: 'Llaveros',
+    category: 'Llaveros',
     image: productsList[5],
-    description: 'combos de merchandansing personalizados'
+    description: 'Sublimación, acrílico y DTF UV'
   },
   {
     id: 7,
-    name: 'Diseño Gráfico',
-    category: 'Diseño',
+    name: 'Especiales',
+    category: 'Especiales',
     image: productsList[6],
-    description: 'Diseñamos lo que necesites para tu negocio o evento personal'
+    description: 'Láminas, lámparas, brazaletes y más'
   },
   {
     id: 8,
-    name: 'Llaveros Personalizados',
-    category: 'Llaveros',
+    name: 'Kits Todo en uno',
+    category: 'Kits',
     image: productsList[7],
-    description: 'Sublimación y Acrílico'
+    description: 'Combos de merchandising personalizados para empresas'
+  },
+  {
+    id: 9,
+    name: 'Diseño Gráfico',
+    category: 'Diseño',
+    image: productsList[8],
+    description: 'Diseñamos lo que necesites para tu negocio o evento personal'
   }
 ];
 
@@ -161,7 +168,7 @@ const ProductCarousel: React.FC = () => {
           
           <div>
             <button 
-              onClick={() => navigate('/catalogo')} // 👈 MODIFICAR ESTA LÍNEA
+              onClick={() => navigate('/catalogo')}
               className="px-8 py-3 border-2 border-[#F7B150] text-[#F7B150] rounded-full font-semibold hover:bg-[#F7B150] hover:text-white transition-all duration-300"
             >
               Ver catálogo completo →

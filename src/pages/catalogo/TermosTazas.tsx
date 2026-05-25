@@ -9,7 +9,7 @@ const TermosTazas: React.FC = () => {
     { 
       id: 1, 
       name: 'Taza 7 oz', 
-      description: 'Tamaño pequeño perfecto para espresso o café corto. Técnica aplicada con DTF UV.', 
+      description: 'Tamaño pequeño. Técnica aplicada con DTF UV.', 
       price: '$8',
       image: termosTazasList[0]
     },
@@ -24,7 +24,7 @@ const TermosTazas: React.FC = () => {
       id: 3, 
       name: 'Taza sublimación + DTF', 
       description: 'Combinación de ambas técnicas para un acabado único y de alto impacto.', 
-      price: '$9',
+      price: '$8',
       image: termosTazasList[2]
     },
     { 
@@ -38,13 +38,13 @@ const TermosTazas: React.FC = () => {
       id: 5, 
       name: 'Taza con base de corcho', 
       description: 'Base de corcho antideslizante. Técnicas aplicadas con sublimación o DTF UV.', 
-      price: '$11',
+      price: '$10',
       image: termosTazasList[4]
     },
     { 
       id: 6, 
       name: 'Taza mágica', 
-      description: 'Taza que cambia de color con el calor. Técnica aplicada con sublimación.', 
+      description: 'Revela el diseño con el calor. Técnica aplicada con sublimación.', 
       price: '$10',
       image: termosTazasList[5]
     },
@@ -52,27 +52,27 @@ const TermosTazas: React.FC = () => {
       id: 7, 
       name: 'Taza mágica + DTF', 
       description: 'Combinación de taza mágica con DTF UV para alto impacto visual.', 
-      price: '$15',
+      price: '$14',
       image: termosTazasList[6]
     },
     { 
       id: 8, 
       name: 'Tazas Apilables 6 oz', 
-      description: 'Set de tazas pequeñas apilables, perfecto para degustación. Técnica aplicada con DTF UV.', 
+      description: 'Set de 4 tazas pequeñas apilables, perfecto para ahorrar espacio. Técnica aplicada con DTF UV.', 
       price: '$18',
       image: termosTazasList[7]
     },
     { 
       id: 9, 
       name: 'Tazas Apilables 11 oz', 
-      description: 'Set de tazas apilables para ahorrar espacio. Técnicas aplicadas con sublimación o DTF UV.', 
+      description: 'Set de 4 tazas apilables. Técnicas aplicadas con sublimación o DTF UV.', 
       price: '$25',
       image: termosTazasList[8]
     },
     { 
       id: 10, 
       name: 'Termo Sport', 
-      description: 'Termo deportivo con pico fácil de abrir. Técnicas aplicadas con sublimación o DTF UV.', 
+      description: 'Termo deportivo termico. Técnicas aplicadas con sublimación o DTF UV.', 
       price: '$16',
       image: termosTazasList[9]
     },
@@ -86,7 +86,7 @@ const TermosTazas: React.FC = () => {
     { 
       id: 12, 
       name: 'Vaso Skinny', 
-      description: 'Vaso delgado ideal para bebidas frías y calientes. Técnicas aplicadas con sublimación o DTF UV.', 
+      description: 'Vaso delgado y elegante ideal para bebidas frías y calientes. Técnicas aplicadas con sublimación o DTF UV.', 
       price: '$25',
       image: termosTazasList[11]
     },

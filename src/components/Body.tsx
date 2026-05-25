@@ -36,7 +36,7 @@ const Body: React.FC = () => {
             ¿Listo para crear algo increíble?
           </h2>
           <p className="text-gray-600 text-lg max-w-3xl mx-auto">
-            Si estas buscandor potenciar tu marca o crear un detalle con significado, 
+            Si estas buscando potenciar tu marca o crear un detalle con significado, 
             aquí en <span className="font-semibold text-[#0F69B2]">NaguaraStudio</span> estamos para ayudarte con tus ideas.
           </p>
         </motion.div>

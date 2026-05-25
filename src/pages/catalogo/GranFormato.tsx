@@ -10,7 +10,7 @@ const GranFormato: React.FC = () => {
     { 
       id: 1, 
       name: 'Sulfato', 
-      description: 'Impresión de 90x70cm sobre cartulina. Ideal para planos, posters y presentaciones.', 
+      description: 'Impresión de 90x70cm sobre cartulina. Ideal para posters y presentaciones de gran tamaño.', 
       price: '$15',
       image: granFormatoList[0]
     },
@@ -21,7 +21,7 @@ const GranFormato: React.FC = () => {
       image: granFormatoList[1],
       subProducts: [
         { name: 'Pendón Pequeño', description: 'Banner de 80x80cm. Ideal para eventos pequeños y promociones.', price: '$22' },
-        { name: 'Pendón Regular', description: 'Banner de 80x120cm. Tamaño estándar para publicidad.', price: '$26' }
+        { name: 'Pendón Regular', description: 'Banner de 80x120cm. Tamaño estándar para publicidad.', price: '$27' }
       ]
     },
     { 
@@ -35,7 +35,7 @@ const GranFormato: React.FC = () => {
       id: 4, 
       name: 'Logos en PVC', 
       description: 'Impresión sobre PVC de 50x50cm. Letreros y logos para interiores y exteriores.', 
-      price: '$50',
+      price: '$55',
       image: granFormatoList[3]
     },
     { 

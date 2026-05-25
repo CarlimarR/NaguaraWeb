@@ -3,22 +3,24 @@ import { Link, useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { FaArrowLeft, FaWhatsapp, FaMugHot, FaTshirt, FaStickyNote, FaTags, FaPrint, FaPalette, FaKey, FaBriefcase, FaLightbulb } from 'react-icons/fa';
 
+// Importar TODAS las imágenes de la carpeta products en UNA sola línea
 const productImages = import.meta.glob('../assets/products/*.{jpg,jpeg,png,webp}', { eager: true });
 const productsList = Object.values(productImages).map((mod: any) => mod.default);
 
 const FullCatalog: React.FC = () => {
   const navigate = useNavigate();
 
+  // CATEGORÍAS CON SUS RUTAS CORRECTAS
   const categories = [
-    { id: 1, name: 'Termos y Tazas', icon: <FaMugHot className="text-4xl" />, path: '/catalogo/termos-tazas', image: productsList[0] }, // 01-Tazas y Termos.png
-    { id: 2, name: 'Textil', icon: <FaTshirt className="text-4xl" />, path: '/catalogo/textil', image: productsList[1] }, // 02-Franelas y Uniformes.png
-    { id: 3, name: 'Papelería', icon: <FaStickyNote className="text-4xl" />, path: '/catalogo/papeleria', image: productsList[2] }, // 03-papeleria.png
-    { id: 4, name: 'Gran Formato', icon: <FaPrint className="text-4xl" />, path: '/catalogo/gran-formato', image: productsList[3] }, // 04-Impresión Gran Formato.png
-    { id: 5, name: 'Stickers', icon: <FaTags className="text-4xl" />, path: '/catalogo/stickers', image: productsList[4] }, // 05-Stickers-Personalizados.jpg
-    { id: 6, name: 'Llaveros', icon: <FaKey className="text-4xl" />, path: '/catalogo/llaveros', image: productsList[5] }, // 06-Llaveros Personalizados.png
-    { id: 7, name: 'Especiales', icon: <FaLightbulb className="text-4xl" />, path: '/catalogo/otros', image: productsList[6] }, // 07-Especiales.jpg
-    { id: 8, name: 'Kits Corporativos', icon: <FaBriefcase className="text-4xl" />, path: '/catalogo/kits', image: productsList[7] }, // 08-kit.png
-    { id: 9, name: 'Diseño Gráfico', icon: <FaPalette className="text-4xl" />, path: '/catalogo/diseno', image: productsList[8] }, // 09-Diseño Gráfico.png
+    { id: 1, name: 'Termos y Tazas', icon: <FaMugHot className="text-4xl" />, path: '/catalogo/termos-tazas', image: productsList[0] },
+    { id: 2, name: 'Textil', icon: <FaTshirt className="text-4xl" />, path: '/catalogo/textil', image: productsList[1] },
+    { id: 3, name: 'Papelería', icon: <FaStickyNote className="text-4xl" />, path: '/catalogo/papeleria', image: productsList[2] },
+    { id: 4, name: 'Gran Formato', icon: <FaPrint className="text-4xl" />, path: '/catalogo/gran-formato', image: productsList[3] },
+    { id: 5, name: 'Stickers', icon: <FaTags className="text-4xl" />, path: '/catalogo/stickers', image: productsList[4] },
+    { id: 6, name: 'Llaveros', icon: <FaKey className="text-4xl" />, path: '/catalogo/llaveros', image: productsList[5] },
+    { id: 7, name: 'Especiales', icon: <FaLightbulb className="text-4xl" />, path: '/catalogo/otros', image: productsList[6] },
+    { id: 8, name: 'Kits Todo en uno', icon: <FaBriefcase className="text-4xl" />, path: '/catalogo/kits', image: productsList[7] },
+    { id: 9, name: 'Diseño Gráfico', icon: <FaPalette className="text-4xl" />, path: '/catalogo/diseno', image: productsList[8] },
   ];
 
   const handleCotizarGeneral = () => {
@@ -72,7 +74,6 @@ const FullCatalog: React.FC = () => {
               onClick={() => navigate(category.path)}
               className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 cursor-pointer group"
             >
-              {/* Imagen cuadrada - aspect-square */}
               <div className="relative aspect-square overflow-hidden">
                 <img
                   src={category.image}
@@ -88,7 +89,6 @@ const FullCatalog: React.FC = () => {
                 </div>
               </div>
               
-              {/* Botón Ver productos */}
               <div className="p-5">
                 <button className="w-full py-2 bg-[#F7B150] text-white rounded-full font-semibold hover:bg-[#0F69B2] transition-all duration-300 flex items-center justify-center gap-2">
                   Ver productos →

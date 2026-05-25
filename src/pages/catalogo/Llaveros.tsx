@@ -1,22 +1,9 @@
 import React from 'react';
 import CategoriaTemplate from './CategoriaTemplate';
 
-// Importar TODAS las imágenes de la carpeta llaveros en UNA sola línea
 const llaverosImages = import.meta.glob('../../assets/catalogo/llaveros/*.{jpg,jpeg,png,webp}', { eager: true });
 const llaverosList = Object.values(llaverosImages).map((mod: any) => mod.default);
 
-// Las imágenes se asignarán en el orden de los archivos (alfabéticamente)
-// Asegúrate de que los nombres de los archivos coincidan con este orden:
-// 1. Llavero doble cara.jpg
-// 2. Llavero liso.jpg
-// 3. Llavero rotulado.jpg
-// 4. Llavero con DTF UV.jpg
-// 5. Llavero sublimado.jpg
-// 6. Llavero sublimado cinta + acrílico.jpg
-// 7. Llavero acrílico.jpg
-// 8. Llavero acrílico con acabado holográfico.jpg
-// 9. Llavero almohadilla.jpg
-// 10. Llavero acrílico sobre acrílico.jpg
 
 const Llaveros: React.FC = () => {
   const products = [
@@ -37,14 +24,14 @@ const Llaveros: React.FC = () => {
     { 
       id: 3, 
       name: 'Llavero rotulado', 
-      description: 'Rotulado en vinil sobre acrílico circular. Ideal para logos y textos.', 
+      description: 'Rotulado en vinil sobre acrílico circular. Ideal para logos y textos simples.', 
       price: '$4',
       image: llaverosList[2]
     },
     { 
       id: 4, 
       name: 'Llavero con DTF UV', 
-      description: 'DTF UV sobre acrílico circular 5x5cm. Colores vibrantes y alta resistencia.', 
+      description: 'DTF UV sobre acrílico circular 5x5cm. Colores vibrantes y alta resistencia, ideal para diseños complejos.', 
       price: '$3.50',
       image: llaverosList[3]
     },
@@ -58,7 +45,7 @@ const Llaveros: React.FC = () => {
     { 
       id: 6, 
       name: 'Llavero sublimado cinta + acrílico', 
-      description: 'Técnica sublimada sobre cinta, más mini pieza en acrílico con impresión en clear. Combinación única.', 
+      description: 'Técnica sublimada sobre cinta, más mini pieza en acrílico. Combinación única.', 
       price: '$6',
       image: llaverosList[5]
     },
@@ -80,15 +67,22 @@ const Llaveros: React.FC = () => {
       id: 9, 
       name: 'Llavero almohadilla', 
       description: 'Técnica de sublimación con relleno suave. Textura agradable al tacto.', 
-      price: '$4',
+      price: '$5',
       image: llaverosList[8]
     },
     { 
       id: 10, 
       name: 'Llavero acrílico sobre acrílico', 
-      description: 'Acrílico sobre acrílico. Capas superpuestas para un efecto 3D único.', 
+      description: 'Capas superpuestas para un efecto 3D único.', 
       price: '$6.50',
       image: llaverosList[9]
+    },
+    { 
+      id: 11, 
+      name: 'Llavero flor eterna', 
+      description: 'Llavero personalizado con flor eterna del color de preferencia.', 
+      price: '$3',
+      image: llaverosList[10]
     },
   ];
 

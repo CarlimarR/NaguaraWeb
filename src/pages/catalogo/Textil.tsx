@@ -10,15 +10,15 @@ const Textil: React.FC = () => {
     { 
       id: 1, 
       name: 'Franelas Sublimadas', 
-      description: 'Técnica aplicada sobre micro durazno color blanco. Acabado suave y resistente.', 
-      price: '$12',
+      description: 'Técnica aplicada sobre micro durazno o algodón color blanco. Acabado suave y resistente.', 
+      price: '$13',
       image: textilList[0]
     },
     { 
       id: 2, 
       name: 'Franelas con Vinil Textil', 
-      description: 'Técnica aplicada sobre algodón con diseños simples. Ideal para estampados de una o dos tintas.', 
-      price: '$12',
+      description: 'Técnica aplicada sobre algodón con diseños simples. Ideal para estampados unicolor.', 
+      price: '$13',
       image: textilList[1]
     },
     { 
@@ -102,14 +102,14 @@ const Textil: React.FC = () => {
       id: 14, 
       name: 'Tote Bag', 
       description: 'Medidas de 35x40cm con técnica sublimada, DTF o Vinil textil sobre liencillo o loneta.', 
-      price: '$12',
+      price: '$13',
       image: textilList[13]
     },
     { 
       id: 15, 
       name: 'Estola', 
-      description: 'Técnica sublimada, DTF o Vinil textil sobre charmuse. Accesorio elegante para cualquier ocasión.', 
-      price: '$6',
+      description: 'Técnica sublimada, DTF o Vinil textil sobre charmuse. Accesorio elegante para cualquier ocasión especial.', 
+      price: '$7',
       image: textilList[14]
     },
     { 
