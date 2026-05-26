@@ -35,7 +35,7 @@ const GranFormato: React.FC = () => {
       id: 4, 
       name: 'Logos en PVC', 
       description: 'Impresión sobre PVC de 50x50cm. Letreros y logos para interiores y exteriores.', 
-      price: '$55',
+      price: '$60',
       image: granFormatoList[3]
     },
     { 
